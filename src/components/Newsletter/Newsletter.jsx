@@ -42,10 +42,20 @@ const Newsletter = () => {
                 alignItems: "center",
               }}
             >
-              <Typography variant="h4" component="div">
+              <Typography
+                variant="h4"
+                component="div"
+                gutterBottom
+                textAlign="center"
+              >
                 Subscribe to our Newsletter
               </Typography>
-              <Typography variant="body1" component="div">
+              <Typography
+                variant="body1"
+                component="div"
+                gutterBottom
+                textAlign="center"
+              >
                 subscribe to our newsletter to get our latest information
               </Typography>
             </Box>
