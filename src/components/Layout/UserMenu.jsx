@@ -123,7 +123,7 @@ const UserMenu = () => {
           </Box>
           {details ? (
             <Typography
-              variant="h6"
+              variant="body1"
               onClick={handleSecondClick}
               sx={{ cursor: "pointer" }}
             >
