@@ -19,7 +19,7 @@ const Footer = () => {
               <Typography variant="h4" gutterBottom>
                 CoinSignalPro
               </Typography>
-              <Typography variant="body1" component="div">
+              <Typography variant="body2" component="div">
                 Trading and investing involves significant level of risk and is
                 not suitable and/or appropriate for all clients. Please make
                 sure you carefully consider your investment objectives, level of
@@ -29,7 +29,7 @@ const Footer = () => {
                 funds you cannot afford to lose.
               </Typography>
             </Box>
-            <Box sx={{ p: 3, mb: 2 }}>
+            <Box sx={{ p: { xs: 3, md: "0px" }, mb: 2 }}>
               <Typography variant="body2" component="div">
                 © 2014 – 2022 CoinSignalPro Trade. All rights reserved
               </Typography>
