@@ -34,7 +34,7 @@ const Hero = () => {
             </Typography>
           </Box>
           <Bot />
-          <Box>
+          <Box sx={{ mt: 6 }}>
             <Button
               size="large"
               startIcon={<FaChevronCircleRight />}
