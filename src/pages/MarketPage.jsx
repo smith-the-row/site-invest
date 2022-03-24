@@ -34,6 +34,7 @@ const MarketPage = () => {
           alignItems: "center",
           width: "80%",
           m: "auto",
+          flexDirection: "column",
           mt: 2,
         }}
       >
