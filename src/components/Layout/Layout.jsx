@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import {
   AppBar,
@@ -15,33 +15,36 @@ import {
   Divider,
 } from "@mui/material";
 import { MdMenu, MdPowerOff } from "react-icons/md";
-import { links } from "./sidebar";
 import { useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
+import { links } from "./sidebar";
+import UserMenu from "./UserMenu";
 import { auth } from "../../firebase";
 
 const drawerWidth = 240;
 
 const Layout = (props) => {
+  // this is the windows prop
   const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  // state to open the drawer on small screens
+  const [mobileOpen, setMobileOpen] = useState(false);
 
-  const navigate = useNavigate();
-
+  // function to click and open the mobile drawer
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
+  // react-router-dom hook to navigate the drawer
+  const navigate = useNavigate();
+
+  // function to logout user
   const handleLogout = () => {
     sessionStorage.removeItem("token");
     signOut(auth);
     navigate("/");
   };
 
-  const goHome = () => {
-    navigate("/dashboard");
-  };
-
+  // this is the list items
   const drawer = (
     <div>
       <List>
@@ -74,31 +77,44 @@ const Layout = (props) => {
           ml: { sm: `${drawerWidth}px` },
         }}
       >
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
-          >
-            <MdMenu />
-          </IconButton>
-          <Typography
-            variant="h4"
-            noWrap
-            component="h1"
-            onClick={goHome}
-            sx={{ p: 1, color: "#198754", cursor: "pointer" }}
-          >
-            CoinSignalPro
-          </Typography>
+        <Toolbar
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <Box sx={{ display: "flex", alignItems: "center", p: 2 }}>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              sx={{ mr: 2, display: { sm: "none" } }}
+            >
+              <MdMenu />
+            </IconButton>
+            <Typography variant="h4" component="div">
+              CoinSignalPro
+            </Typography>
+          </Box>
+          <Box sx={{ display: { xs: "none", md: "block" } }}>
+            <Typography variant="body1" color="turquoise" textAlign="center">
+              Todays PNL
+            </Typography>
+            <Typography variant="subtitle1" textAlign="center">
+              $0.00
+            </Typography>
+          </Box>
+
+          <Box sx={{ display: { xs: "none", md: "block" } }}>
+            <UserMenu />
+          </Box>
         </Toolbar>
       </AppBar>
       <Box
         component="nav"
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-        aria-label="mailbox folders"
       >
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Drawer
@@ -117,6 +133,9 @@ const Layout = (props) => {
             },
           }}
         >
+          <Box sx={{ mt: 1, mb: 2 }}>
+            <UserMenu />
+          </Box>
           {drawer}
           <Box>
             <List>

@@ -1,82 +1,84 @@
-import React, { useState } from "react";
-import { Tabs, Tab, Box } from "@mui/material";
-import "./plan.css";
-import BasicPlan from "./BasicPlan";
-import BronzePlan from "./BronzePlan";
-import SliverPlan from "./SliverPlan";
-import GoldPlan from "./GoldPlan";
-import PlatinumPlan from "./PlatinumPlan";
-
-const TabPanel = ({ children, value, index }) => {
-  return <Box>{value === index && <Box sx={{ p: 3 }}>{children}</Box>}</Box>;
-};
+import React from "react";
+import {
+  Box,
+  Typography,
+  Grid,
+  Container,
+  Paper,
+  Divider,
+  Button,
+} from "@mui/material";
+import { plans } from "./plan";
+import { useNavigate } from "react-router-dom";
 
 const Plan = () => {
-  const [value, setValue] = useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+  const navigate = useNavigate();
 
   return (
     <>
-      <div className="plan">
-        <div className="plan__container">
-          <div className="plan__title">
-            <h1 className="fw-bolder">Choose your Prefered Plan</h1>
-            <p>
-              Choose your plans and increase your mining speed and make more
-              coins!
-            </p>
-          </div>
-        </div>
-      </div>
-      <Box>
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          variant="scrollable"
-          scrollButtons
-          allowScrollButtonsMobile
-          centered
-        >
-          <Tab
-            label="Basic"
-            sx={{ color: "#000", textTransform: "uppercase" }}
-          />
-          <Tab
-            label="Bronze"
-            sx={{ color: "#000", textTransform: "uppercase" }}
-          />
-          <Tab
-            label="Sliver"
-            sx={{ color: "#000", textTransform: "uppercase" }}
-          />
-          <Tab
-            label="Gold"
-            sx={{ color: "#000", textTransform: "uppercase" }}
-          />
-          <Tab
-            label="Platinum"
-            sx={{ color: "#000", textTransform: "uppercase" }}
-          />
-        </Tabs>
+      <Box sx={{ mt: 4, mb: 5 }}>
+        <Container>
+          <Typography
+            textAlign="center"
+            gutterBottom
+            variant="h3"
+            component="h1"
+          >
+            Choose A Plan
+          </Typography>
+          <Typography
+            textAlign="center"
+            gutterBottom
+            variant="body1"
+            component="p"
+          >
+            Choose a plan today and get started.
+          </Typography>
+          <Box sx={{ mt: 2, mb: 2 }}>
+            <Grid container spacing={3}>
+              {plans.map((plan) => (
+                <Grid item xs={12} md={4} key={plan.id}>
+                  <Paper sx={{ p: 2 }}>
+                    <Typography
+                      variant="body1"
+                      gutterBottom
+                      textAlign="center"
+                      component="p"
+                    >
+                      {plan.type}
+                    </Typography>
+                    <Divider />
+                    <Typography
+                      variant="h4"
+                      textAlign="center"
+                      sx={{ mt: 2 }}
+                      gutterBottom
+                    >
+                      {plan.amount}
+                    </Typography>
+                    <Typography textAlign="center" variant="body1" gutterBottom>
+                      Duration: {plan.duration}
+                    </Typography>
+                    <Typography textAlign="center" variant="body1" gutterBottom>
+                      ROI: {plan.Roi}
+                    </Typography>
+                    <Divider />
+                    <Button
+                      variant="outlined"
+                      color="primary"
+                      fullWidth
+                      sx={{ mt: 2 }}
+                      onClick={() => navigate("/register")}
+                    >
+                      Start Now
+                    </Button>
+                  </Paper>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
+        </Container>
       </Box>
-      <TabPanel value={value} index={0}>
-        <BasicPlan />
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <BronzePlan />
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <SliverPlan />
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-        <GoldPlan />
-      </TabPanel>
-      <TabPanel value={value} index={4}>
-        <PlatinumPlan />
-      </TabPanel>
     </>
   );
 };

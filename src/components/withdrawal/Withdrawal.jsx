@@ -119,6 +119,17 @@ const Withdrawal = () => {
                       {option.minAmount}
                     </Typography>
                   </Box>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      mb: 2,
+                      mt: 2,
+                    }}
+                  >
+                    <Typography variant="body1">Charge</Typography>
+                    <Typography variant="subtitle1">{option.charge}</Typography>
+                  </Box>
                   <Box sx={{ mt: 4 }}>
                     <Button
                       variant="contained"
@@ -160,7 +171,14 @@ const Withdrawal = () => {
             <Box sx={{ display: "flex", flexDirection: "column" }}>
               <TextField
                 label="Enter Address"
-                sx={{ mt: 5, mb: 3 }}
+                type="text"
+                sx={{ mt: 5, mb: 1 }}
+                inputRef={addressRef}
+              />
+              <TextField
+                label="Enter Amount"
+                type="number"
+                sx={{ mt: 1, mb: 2 }}
                 inputRef={addressRef}
               />
               <TextField disabled sx={{ mb: 3 }} placeholder={value} />
@@ -168,6 +186,7 @@ const Withdrawal = () => {
                 variant="contained"
                 color="primary"
                 onClick={withdrawMethod}
+                fullWidth
               >
                 Submit
               </Button>

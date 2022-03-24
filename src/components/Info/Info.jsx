@@ -9,7 +9,7 @@ const Info = () => {
           <h1 className="fw-bolder ">About CoinSignalPro</h1>
         </div>
         <div className="info__about">
-          <p className="text-muted">
+          <p className="text-white">
             CoinSignalPro is one of the leading cryptocurrency mining platforms,
             offering cryptocurrency mining capacities in every range - for
             newcomers. Our mission is to make acquiring cryptocurrencies easy

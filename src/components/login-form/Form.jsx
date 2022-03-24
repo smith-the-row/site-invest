@@ -7,8 +7,7 @@ import {
 } from "firebase/auth";
 import { auth } from "../../firebase";
 import { useNavigate } from "react-router-dom";
-
-import "./form.css";
+import { Paper, Button, TextField, Box, Typography } from "@mui/material";
 
 const Form = () => {
   // navigation
@@ -90,47 +89,85 @@ const Form = () => {
   };
 
   return (
-    <div className="form pd">
-      <div className="form__card shadow rounded my-5 p-3">
-        <div className="form__title text-center">
-          <Link to="/" className="fs-1 fw-bolder text-main text-success">
-            CoinSignalPro
-          </Link>
-          <p>
-            Click here to{" "}
-            <Link to="/register" className="text-success">
-              Create Account
-            </Link>
-          </p>
-        </div>
-        <div className="form__container my-3">
-          <div className="my-4">
-            <label htmlFor="email" className="form-label">
-              Email
-            </label>
-            <input type="email" ref={emailRef} className="form-control" />
-          </div>
-          <div className="my-4">
-            <label htmlFor="password" className="form-label">
-              Password
-            </label>
-            <input type="password" ref={passwordRef} className="form-control" />
-          </div>
-          <div className="text-left my-3">
-            <Link
-              to="/"
-              className="text-muted text-sec"
-              onClick={resetPassword}
+    <>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Box sx={{ mt: 3 }}>
+          <Paper sx={{ p: 2 }}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
             >
-              Forgot Password
-            </Link>
-          </div>
-          <button className="btn btn-success btn-block" onClick={loginUser}>
-            Login
-          </button>
-        </div>
-      </div>
-    </div>
+              <Link to="/">
+                <Typography
+                  variant="h4"
+                  component="div"
+                  textAlign="center"
+                  sx={{ color: "white" }}
+                >
+                  Welcome Back !
+                </Typography>
+              </Link>
+              <Link to="/register">
+                <Typography
+                  textAlign="center"
+                  variant="subtitle1"
+                  component="p"
+                >
+                  Click Here to create an account
+                </Typography>
+              </Link>
+            </Box>
+            <Box component="form" sx={{ mt: 2 }}>
+              <TextField
+                variant="outlined"
+                type="email"
+                label="Email"
+                inputRef={emailRef}
+                margin="normal"
+                fullWidth
+              />
+              <TextField
+                variant="outlined"
+                type="password"
+                label="Password"
+                inputRef={passwordRef}
+                margin="normal"
+                fullWidth
+              />
+              <Box sx={{ mb: 1, mt: 1 }}>
+                <Typography
+                  variant="subtitle1"
+                  component="a"
+                  sx={{ cursor: "pointer" }}
+                  onClick={resetPassword}
+                >
+                  Forgot Password
+                </Typography>
+              </Box>
+              <Button
+                variant="contained"
+                color="primary"
+                fullWidth
+                onClick={loginUser}
+              >
+                Login
+              </Button>
+            </Box>
+          </Paper>
+        </Box>
+      </Box>
+    </>
   );
 };
 

@@ -35,6 +35,7 @@ import { store, bucket } from "../../firebase";
 // user context
 import { UserContext } from "../../context/UserContext";
 import moment from "moment";
+import Kyc from "./Kyc";
 
 // styles for the Upload Picture Modal
 const style = {
@@ -293,9 +294,11 @@ const Profile = () => {
         <Skeleton variant="rectangular" width="100%" height={400} />
       )}
 
+      <Kyc />
+
       <Modal
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
+        aria-labelledby="modal-to-change-img"
+        aria-describedby="modal-to-change-profile-img"
         open={modalOpen}
         onClose={handleClose}
         closeAfterTransition
@@ -327,8 +330,8 @@ const Profile = () => {
       </Modal>
 
       <Modal
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
+        aria-labelledby="modal-for-profile-change"
+        aria-describedby="modal-to-change-profile-details"
         open={formModalOpen}
         onClose={handleFormClose}
         closeAfterTransition

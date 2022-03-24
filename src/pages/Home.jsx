@@ -8,7 +8,7 @@ import Newsletter from "../components/Newsletter/Newsletter";
 import Plan from "../components/Plans/Plan";
 import Reason from "../components/Reason/Reason";
 import Start from "../components/Start/Start";
-import Work from "../components/Work/Work";
+import GlobalMap from "../components/map/GlobalMap";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -33,9 +33,9 @@ const Home = () => {
       <Header />
       <About />
       <Start />
-      <Work />
       <Reason />
       <Plan />
+      <GlobalMap />
       <Newsletter />
       <Footer />
     </React.Fragment>

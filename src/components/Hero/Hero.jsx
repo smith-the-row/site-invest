@@ -1,45 +1,52 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { FaChevronCircleRight } from "react-icons/fa";
+import { Box, Button, Typography } from "@mui/material";
+import Bot from "./Bot";
+import { useNavigate } from "react-router-dom";
 
 import "./hero.css";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
-    <>
-      <div
-        className="hero"
-        style={{
-          backgroundImage: "url(/img/bg-img.jpg)",
-          height: "70vh",
-          position: "relative",
-        }}
-      >
-        <div className="hero__overlay">
-          <div className="container py-5 d-flex flex-column ">
-            <div>
-              <h1 className="text-white text-center text-uppercase fs-1 fw-bold">
-                Financial Investments
-              </h1>
-            </div>
-          </div>
-          <div className="container">
-            <p className="text-center text-white ">
-              CoinSignalPro Trading Signals is a group of financial and
-              cryptocurrency experts that invest in mining and cryptocurrency
-              trading. We carefully examine the volatility of bitcoin and other
-              crypto currencies, invest and make good profit from our
-              investments.
-            </p>
-          </div>
-          <div className="text-center mx-auto">
-            <Link to="/register" className="btn btn-success fs-5 text-sec">
-              Get Started <FaChevronCircleRight className="ms-2" />
-            </Link>
-          </div>
-        </div>
-      </div>
-    </>
+    <Box
+      className="hero"
+      style={{
+        backgroundImage: "url(/img/bg-img.jpg)",
+        height: "100vh",
+        position: "relative",
+      }}
+    >
+      <Box className="hero__overlay">
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            p: 2,
+            flexDirection: "column",
+          }}
+        >
+          <Box sx={{ mt: 2, mb: 2 }}>
+            <Typography variant="h3" textAlign="center">
+              Smart. Online Trading
+            </Typography>
+          </Box>
+          <Bot />
+          <Box>
+            <Button
+              size="large"
+              startIcon={<FaChevronCircleRight />}
+              variant="contained"
+              onClick={() => navigate("/register")}
+            >
+              Try CoinSignalPro
+            </Button>
+          </Box>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 

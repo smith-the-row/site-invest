@@ -1,3 +1,6 @@
+/* css import google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Nunito:wght@800&display=swap");
+
 /* base classes */
 * {
   padding: 0;
@@ -7,6 +10,11 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  background-color: #131722;
+  color: #fff;
 }
 
 a {

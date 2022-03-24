@@ -1,41 +1,47 @@
 import {
-  MdDashboard,
-  MdAccountCircle,
-  MdPayment,
-  MdDownload,
-  MdCreditScore,
-  MdBusinessCenter,
+  MdEvent,
+  MdAnalytics,
+  MdAnnouncement,
+  MdAccountBalance,
+  MdDashboardCustomize,
+  MdDataExploration,
+  MdCallMade,
 } from "react-icons/md";
 
 export const links = [
   {
     text: "Dashboard",
     path: "/dashboard",
-    icon: <MdDashboard size="18px" />,
+    icon: <MdDashboardCustomize />,
   },
   {
-    text: "Account Settings",
-    path: "/account",
-    icon: <MdAccountCircle />,
+    text: "Market",
+    path: "/market",
+    icon: <MdAnnouncement />,
   },
   {
-    text: "Deposit",
+    text: "Analytics",
+    path: "/analytics",
+    icon: <MdAnalytics />,
+  },
+  {
+    text: "Fund Account",
     path: "/deposit",
-    icon: <MdPayment />,
+    icon: <MdAccountBalance />,
   },
   {
-    text: "Invest",
-    path: "/invest",
-    icon: <MdDownload />,
+    text: "Trading Signal",
+    path: "/signal",
+    icon: <MdDataExploration />,
   },
   {
-    text: "Withdraw",
-    path: "/withdraw",
-    icon: <MdCreditScore />,
+    text: "NFT marketplace",
+    path: "/news",
+    icon: <MdEvent />,
   },
   {
-    text: "Transactions",
-    path: "/transactions",
-    icon: <MdBusinessCenter />,
+    text: "Level Upgrade",
+    path: "/level",
+    icon: <MdCallMade />,
   },
 ];

@@ -20,7 +20,6 @@ import { theme } from "./theme/theme";
 // import Pages or Routes
 import Home from "./pages/Home";
 import AboutPage from "./pages/AboutPage";
-import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
@@ -28,11 +27,16 @@ import Dashboard from "./pages/Dashboard";
 import Deposit from "./pages/Deposit";
 import Withdraw from "./pages/Withdraw";
 import Account from "./pages/Account";
-import Invest from "./pages/Invest";
 import Wallets from "./pages/Wallets";
 import TransactionsPage from "./pages/TransactionsPage";
 import Refer from "./pages/Refer";
 import Terms from "./pages/Terms";
+import Market from "./pages/Market";
+import Analytics from "./pages/Analytics";
+import Level from "./pages/Level";
+import Signal from "./pages/Signal";
+import News from "./pages/News";
+import MarketPage from "./pages/MarketPage";
 
 // import the user context that will Cover the applications and control authentication state
 import UserProvider from "./context/UserContext";
@@ -43,7 +47,6 @@ ReactDOM.render(
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
@@ -52,10 +55,15 @@ ReactDOM.render(
           <Route path="/deposit/wallet" element={<Wallets />} />
           <Route path="/withdraw" element={<Withdraw />} />
           <Route path="/account" element={<Account />} />
-          <Route path="/invest" element={<Invest />} />
           <Route path="/transactions" element={<TransactionsPage />} />
           <Route path="/refer" element={<Refer />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/market" element={<Market />} />
+          <Route path="/analytics" element={<Analytics />} />
+          <Route path="/signal" element={<Signal />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/level" element={<Level />} />
+          <Route path="/marketpage" element={<MarketPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
