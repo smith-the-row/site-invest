@@ -7,7 +7,7 @@ const About = () => {
   return (
     <React.Fragment>
       <IconContext.Provider value={{ color: "#f4f4f4", size: "2rem" }}>
-        <Container sx={{ mt: 4 }}>
+        <Container sx={{ mt: 6 }}>
           <Box>
             <Paper sx={{ p: 2 }}>
               <Box sx={{ mt: 2, mb: 2 }}>

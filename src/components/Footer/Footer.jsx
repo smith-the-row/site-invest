@@ -20,13 +20,10 @@ const Footer = () => {
                 CoinSignalPro
               </Typography>
               <Typography variant="body2" component="div">
-                Trading and investing involves significant level of risk and is
-                not suitable and/or appropriate for all clients. Please make
-                sure you carefully consider your investment objectives, level of
-                experience and risk appetite before buying or selling. Buying or
-                selling entails financial risks and could result in a partial or
-                complete loss of your funds, therefore, you should not invest
-                funds you cannot afford to lose.
+                We are a US Registered company found by a group of Wall Street
+                high frequency traders. We have 30 years of combined experience
+                trading the cryptocurrency market using cutting edge machine
+                learning algorithms.
               </Typography>
             </Box>
             <Box sx={{ p: { xs: 3, md: "0px" }, mb: 2 }}>

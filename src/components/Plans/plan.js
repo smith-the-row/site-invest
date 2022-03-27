@@ -2,14 +2,14 @@ export const plans = [
   {
     id: 1,
     type: "Micro-1",
-    amount: "$10,000",
+    amount: "$5,000",
     duration: "1 Month",
     Roi: "40%",
   },
   {
     id: 2,
     type: "Micro-2",
-    amount: "$20,000",
+    amount: "$10,000",
     duration: "1 Month",
     Roi: "40%",
   },
@@ -31,14 +31,14 @@ export const plans = [
     id: 5,
     type: "Standard-1",
     amount: "$120,000",
-    duration: "3 Month",
+    duration: "3 Months",
     Roi: "50%",
   },
   {
     id: 6,
     type: "Standard-2",
     amount: "$150,000",
-    duration: "3 Month",
+    duration: "3 Months",
     Roi: "50%",
   },
 ];
