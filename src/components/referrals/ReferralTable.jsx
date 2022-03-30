@@ -36,7 +36,7 @@ const ReferralTable = () => {
   console.log(referrers);
 
   return (
-    <Box sx={{ mt: 8, display: { xs: "none", md: "block" } }}>
+    <Box sx={{ mt: 8 }}>
       <Paper sx={{ p: 3 }}>
         <Box sx={{ mb: 4 }}>
           <Typography variant="h5" component="div" gutterBottom>

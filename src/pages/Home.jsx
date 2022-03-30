@@ -5,10 +5,10 @@ import About from "../components/About/About";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import Newsletter from "../components/Newsletter/Newsletter";
-// import Plan from "../components/Plans/Plan";
 import Reason from "../components/Reason/Reason";
 import Start from "../components/Start/Start";
 import GlobalMap from "../components/map/GlobalMap";
+import Plan from "../components/investmentPlans/Plans";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -23,7 +23,7 @@ const Home = () => {
     // insert tidio here
     const script = document.createElement("script");
     script.async = true;
-    script.src = "//code.tidio.co/ddgy1qfhhgt7p01guudw28bqkv3vqvpz.js";
+    script.src = "//code.tidio.co/mc4zjyzflr75fxtcydcvrco2m8wixpse.js";
 
     document.body.append(script);
   }, []);
@@ -34,7 +34,7 @@ const Home = () => {
       <About />
       <Start />
       <Reason />
-      {/* <Plan /> */}
+      <Plan />
       <GlobalMap />
       <Newsletter />
       <Footer />
