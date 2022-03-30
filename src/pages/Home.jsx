@@ -5,7 +5,7 @@ import About from "../components/About/About";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import Newsletter from "../components/Newsletter/Newsletter";
-import Plan from "../components/Plans/Plan";
+// import Plan from "../components/Plans/Plan";
 import Reason from "../components/Reason/Reason";
 import Start from "../components/Start/Start";
 import GlobalMap from "../components/map/GlobalMap";
@@ -34,7 +34,7 @@ const Home = () => {
       <About />
       <Start />
       <Reason />
-      <Plan />
+      {/* <Plan /> */}
       <GlobalMap />
       <Newsletter />
       <Footer />
@@ -43,7 +43,3 @@ const Home = () => {
 };
 
 export default Home;
-
-{
-  /* <script src="//code.tidio.co/ddgy1qfhhgt7p01guudw28bqkv3vqvpz.js" async></script> */
-}

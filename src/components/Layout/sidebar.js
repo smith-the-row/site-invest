@@ -7,6 +7,7 @@ import {
   MdDataExploration,
   MdCallMade,
 } from "react-icons/md";
+import { FaBriefcase } from "react-icons/fa";
 
 export const links = [
   {
@@ -38,6 +39,11 @@ export const links = [
     text: "NFT marketplace",
     path: "/news",
     icon: <MdEvent />,
+  },
+  {
+    text: "Investment",
+    path: "/invest",
+    icon: <FaBriefcase />,
   },
   {
     text: "Level Upgrade",

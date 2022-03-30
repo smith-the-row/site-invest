@@ -8,7 +8,7 @@ import {
   Divider,
   Button,
 } from "@mui/material";
-import { plans } from "./plan";
+import { plans } from "./plans";
 import { useNavigate } from "react-router-dom";
 
 const Plan = () => {
@@ -37,7 +37,7 @@ const Plan = () => {
           <Box sx={{ mt: 2, mb: 2 }}>
             <Grid container spacing={3}>
               {plans.map((plan) => (
-                <Grid item xs={12} md={4} key={plan.id}>
+                <Grid item xs={12} md={6} key={plan.id}>
                   <Paper sx={{ p: 2 }}>
                     <Typography
                       variant="body1"
