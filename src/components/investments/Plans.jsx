@@ -72,7 +72,7 @@ const Plans = () => {
           theme: "colored",
         });
 
-        navigate("/deposits");
+        navigate("/deposit");
       } else {
         await updateDoc(docRef, {
           realBalance: userDetails.data().realBalance - amountRef.current.value,
