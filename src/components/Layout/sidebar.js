@@ -7,7 +7,7 @@ import {
   MdDataExploration,
   MdCallMade,
 } from "react-icons/md";
-import { FaBriefcase } from "react-icons/fa";
+import { FaBriefcase, FaRegHandshake } from "react-icons/fa";
 
 export const links = [
   {
@@ -49,5 +49,10 @@ export const links = [
     text: "Level Upgrade",
     path: "/level",
     icon: <MdCallMade />,
+  },
+  {
+    text: "Refer",
+    path: "/refer",
+    icon: <FaRegHandshake />,
   },
 ];

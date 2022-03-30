@@ -20,6 +20,7 @@ const Form = () => {
   const emailRef = useRef();
   const phoneRef = useRef();
   const passwordRef = useRef();
+  const referrerRef = useRef();
 
   // function to create and save user to the database
   const saveUser = async (e) => {
@@ -46,7 +47,6 @@ const Form = () => {
       );
       // send verification
       sendEmailVerification(user);
-      // set the backdrop
 
       // add to the database
       await setDoc(doc(store, "users", emailRef.current.value), {
@@ -56,9 +56,11 @@ const Form = () => {
         password: passwordRef.current.value,
         realBalance: 0,
         refBonus: 0,
+        profit: 0,
         verified: user.emailVerified,
         createdAt: user.metadata.creationTime,
         uid: user.uid,
+        referrer: referrerRef.current.value,
       });
       // toast notification
       toast.success("Welcome to CoinSignalPro Please verify your email", {
@@ -170,6 +172,16 @@ const Form = () => {
                 color="primary"
                 margin="normal"
                 inputRef={passwordRef}
+                fullWidth
+              />
+
+              <TextField
+                label="Referral Code (optional)"
+                variant="outlined"
+                type="text"
+                color="primary"
+                margin="normal"
+                inputRef={referrerRef}
                 fullWidth
               />
               <Button

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useMemo } from "react";
 import PropTypes from "prop-types";
 import {
   AppBar,
@@ -13,6 +13,7 @@ import {
   Typography,
   CssBaseline,
   Divider,
+  Skeleton,
 } from "@mui/material";
 import { MdMenu, MdPowerOff } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
@@ -20,10 +21,17 @@ import { signOut } from "firebase/auth";
 import { links } from "./sidebar";
 import UserMenu from "./UserMenu";
 import { auth } from "../../firebase";
+import { doc, getDoc } from "firebase/firestore";
+import { store } from "../../firebase";
+// user context
+import { UserContext } from "../../context/UserContext";
 
 const drawerWidth = 240;
 
 const Layout = (props) => {
+  // user details form database
+  const [details, setDetails] = useState(null);
+
   // this is the windows prop
   const { window } = props;
   // state to open the drawer on small screens
@@ -37,12 +45,31 @@ const Layout = (props) => {
   // react-router-dom hook to navigate the drawer
   const navigate = useNavigate();
 
+  // user context
+  const { user } = useContext(UserContext);
+
   // function to logout user
   const handleLogout = () => {
     sessionStorage.removeItem("token");
     signOut(auth);
     navigate("/");
   };
+
+  // useEffect
+  useMemo(() => {
+    const fetchUserDetails = async () => {
+      try {
+        const docRef = doc(store, "/users", `${user.email}`);
+        const userDetails = await getDoc(docRef);
+
+        setDetails(userDetails.data());
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchUserDetails();
+  }, [user.email]);
 
   // this is the list items
   const drawer = (
@@ -98,15 +125,18 @@ const Layout = (props) => {
               CoinSignalPro
             </Typography>
           </Box>
-          <Box sx={{ display: { xs: "none", md: "block" } }}>
-            <Typography variant="body1" color="turquoise" textAlign="center">
-              Todays PNL
-            </Typography>
-            <Typography variant="subtitle1" textAlign="center">
-              $0.00
-            </Typography>
-          </Box>
-
+          {details ? (
+            <Box sx={{ display: { xs: "none", md: "block" } }}>
+              <Typography variant="body1" color="turquoise" textAlign="center">
+                Todays PNL
+              </Typography>
+              <Typography variant="subtitle1" textAlign="center">
+                {`$${details.profit}`}
+              </Typography>
+            </Box>
+          ) : (
+            <Skeleton variant="rectangular" width="50" />
+          )}
           <Box sx={{ display: { xs: "none", md: "block" } }}>
             <UserMenu />
           </Box>

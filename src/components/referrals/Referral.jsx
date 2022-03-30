@@ -1,20 +1,24 @@
+import React, { useContext } from "react";
 import { Box, Link, Paper, Typography } from "@mui/material";
-import React from "react";
 import { toast } from "react-toastify";
 import ReferralTable from "./ReferralTable";
+import { UserContext } from "../../context/UserContext";
 
 const Referral = () => {
+  // context
+  const { user } = useContext(UserContext);
+
   toast.configure();
+
+  const code = user.uid;
 
   const handleClick = (text) => {
     navigator.clipboard.writeText(text);
-    toast.info("Link Has been Copied", {
+    toast.info("Code Has been Copied", {
       theme: "colored",
       position: "top-center",
     });
   };
-
-  const link = `https://www.coinSignalPro/ref/huiojiniojiojij`;
 
   return (
     <Box>
@@ -35,10 +39,14 @@ const Referral = () => {
             component="div"
             textAlign="center"
           >
-            You can refer users by sharing your referral link:
+            You can refer users by sharing your referral Code:
           </Typography>
-          <Link type="button" onClick={() => handleClick(link)}>
-            {link}
+          <Link
+            type="button"
+            sx={{ fontSize: "28px" }}
+            onClick={() => handleClick(code)}
+          >
+            {code}
           </Link>
         </Box>
       </Paper>

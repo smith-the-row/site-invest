@@ -10514,6 +10514,16 @@
     "indent-string" "^4.0.0"
     "strip-indent" "^3.0.0"
 
+"referral-code-generator@^1.0.8":
+  "integrity" "sha512-6ue9E7aJmKPyxMx4r5A15aG8K2DkP6uQXtvyKl1/m3XINU7w3dZSkGJlpVhIfPi+X/QbkLYOMqCli3GJZxSkNA=="
+  "resolved" "https://registry.npmjs.org/referral-code-generator/-/referral-code-generator-1.0.8.tgz"
+  "version" "1.0.8"
+
+"referral-codes@^2.0.1":
+  "integrity" "sha512-FVu3U2DaJzXKj3USgIcIfHWs6NTJrK2xDtRroIOI39nuHkft+pYpLbwW4NuUVCvHkIcxLSLBgrN/ynyA0jPNBQ=="
+  "resolved" "https://registry.npmjs.org/referral-codes/-/referral-codes-2.0.1.tgz"
+  "version" "2.0.1"
+
 "regenerate-unicode-properties@^8.2.0":
   "integrity" "sha512-F9DjY1vKLo/tPePDycuH3dn9H1OTPIkVD9Kz4LODu+F2C75mgjAJ7x/gwy6ZcSNRAAkhNlJSOHRe8k3p+K9WhA=="
   "resolved" "https://registry.npmjs.org/regenerate-unicode-properties/-/regenerate-unicode-properties-8.2.0.tgz"
