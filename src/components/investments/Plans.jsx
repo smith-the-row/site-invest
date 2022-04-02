@@ -13,7 +13,14 @@ import {
   TextField,
 } from "@mui/material";
 import { plans } from "../Plans/plans";
-import { getDoc, doc, updateDoc } from "firebase/firestore";
+import {
+  getDoc,
+  doc,
+  updateDoc,
+  collection,
+  addDoc,
+  serverTimestamp,
+} from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { store } from "../../firebase";
 import { toast } from "react-toastify";
@@ -57,7 +64,8 @@ const Plans = () => {
       // get the user deposit
       const docRef = doc(store, "/users", `${user.email}`);
       const userDetails = await getDoc(docRef);
-      if (amountRef.current.value < planChoose.min) {
+      const shouldInvest = parseInt(planChoose.min) > amountRef.current.value;
+      if (shouldInvest === true) {
         return toast.error(
           `Amount should not be less than $${planChoose.min}`,
           {
@@ -74,6 +82,21 @@ const Plans = () => {
 
         navigate("/deposit");
       } else {
+        // update document
+        const collectionRef = collection(
+          store,
+          "users",
+          `${user.email}`,
+          "investment"
+        );
+
+        await addDoc(collectionRef, {
+          date: serverTimestamp(),
+          amount: amountRef.current.value,
+          plan: planChoose.type,
+          returns: planChoose.Roi,
+        });
+
         await updateDoc(docRef, {
           realBalance: userDetails.data().realBalance - amountRef.current.value,
           activePlan: planChoose.type,

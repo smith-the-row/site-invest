@@ -5,14 +5,11 @@ import Box from "@mui/material/Box";
 import { Typography } from "@mui/material";
 import DepositTable from "../deposit/DepositTable";
 import WIthdrawalTable from "../withdrawal/WIthdrawalTable";
+import InvestmentTable from "../investments/InvestmentTable";
 
 const Panel = (props) => {
   const { children, value, index } = props;
-  return (
-    <Box sx={{ width: { xs: "50%", md: "100%" } }}>
-      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
-    </Box>
-  );
+  return <Box>{value === index && <Box sx={{ p: 3 }}>{children}</Box>}</Box>;
 };
 
 const TransactionTabs = () => {
@@ -35,6 +32,7 @@ const TransactionTabs = () => {
         >
           <Tab label="Withdraws" />
           <Tab label="Deposits" />
+          <Tab label="Investments" />
         </Tabs>
       </Box>
       <Panel value={index} index={0}>
@@ -42,6 +40,9 @@ const TransactionTabs = () => {
       </Panel>
       <Panel value={index} index={1}>
         <DepositTable />
+      </Panel>
+      <Panel value={index} index={2}>
+        <InvestmentTable />
       </Panel>
       <Box sx={{ mt: 10 }}>
         <Typography variant="caption">

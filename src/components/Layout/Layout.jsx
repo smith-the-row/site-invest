@@ -135,7 +135,7 @@ const Layout = (props) => {
               </Typography>
             </Box>
           ) : (
-            <Skeleton variant="rectangular" width="50" />
+            <Skeleton variant="rectangular" width="150" height="50" />
           )}
           <Box sx={{ display: { xs: "none", md: "block" } }}>
             <UserMenu />
