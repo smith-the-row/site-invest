@@ -40,11 +40,11 @@ const Portfoilo = () => {
         <Box sx={{ display: "flex", justifyContent: "space-between", mt: 2 }}>
           <Box>
             <Typography variant="body1" gutterBottom color="gray">
-              Capital
+              Investment Capital
             </Typography>
             {details ? (
               <Typography variant="body2">
-                {details.realBalance ? `$${details.realBalance}` : `$0.00`}
+                {details.investment ? `$${details.investment}` : `$0.00`}
               </Typography>
             ) : (
               <Skeleton variant="text" />
@@ -88,6 +88,18 @@ const Portfoilo = () => {
               <Skeleton variant="text" />
             )}
           </Box>
+        </Box>
+        <Box sx={{ mt: 2 }}>
+          <Typography variant="body1" color="gray">
+            Bonus
+          </Typography>
+          {details ? (
+            <Typography variant="body2">
+              {details.refBonus ? `$${details.refBonus}` : `$0.00`}
+            </Typography>
+          ) : (
+            <Skeleton variant="text" />
+          )}
         </Box>
         <Button
           variant="outlined"

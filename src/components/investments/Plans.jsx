@@ -100,6 +100,7 @@ const Plans = () => {
         await updateDoc(docRef, {
           realBalance: userDetails.data().realBalance - amountRef.current.value,
           activePlan: planChoose.type,
+          investment: amountRef.current.value,
         });
 
         toast.info("Request Submitted", {

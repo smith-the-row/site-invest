@@ -10,7 +10,7 @@ import {
   TableRow,
   TableBody,
 } from "@mui/material";
-import { getDocs, collection } from "firebase/firestore";
+import { getDocs, collection, addDoc } from "firebase/firestore";
 import { store } from "../../firebase";
 import { UserContext } from "../../context/UserContext";
 import moment from "moment";
@@ -20,20 +20,41 @@ const ReferralTable = () => {
 
   const { user } = useContext(UserContext);
 
+  const addReferral = async () => {
+    const collectionRef = collection(
+      store,
+      "users",
+      `${user.email}`,
+      "referred"
+    );
+
+    await addDoc(collectionRef, {
+      referrers,
+    });
+  };
+
   useMemo(() => {
     async function fetchUsers() {
       const usersRef = collection(store, "users");
+
       const users = await getDocs(usersRef);
       const referred = [];
-      users.forEach((user) => referred.push(user.data()));
+      users.forEach(async (user) => {
+        referred.push(user.data());
+      });
+
       const referredUsers = referred.filter((u) => user.uid === u.referrer);
       setReferrers(referredUsers);
     }
 
     fetchUsers();
+
+    // eslint-disable-next-line
   }, [user.uid]);
 
-  console.log(referrers);
+  setTimeout(() => {
+    addReferral();
+  }, 4000);
 
   return (
     <Box sx={{ mt: 8 }}>
