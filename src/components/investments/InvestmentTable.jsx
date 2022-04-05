@@ -52,6 +52,8 @@ const InvestmentTable = () => {
     fetchInvestment();
   }, [user.email]);
 
+  console.log(investments);
+
   return (
     <TableContainer component={Paper} sx={{ mt: 6 }}>
       {investments.length > 0 ? (

@@ -23,8 +23,8 @@ const Withdrawal = () => {
   toast.configure();
   // form state
   const addressRef = useRef();
-  const [value, setValue] = useState("");
-  const [amt, setAmt] = useState("");
+  const amtRef = useRef();
+  const coinRef = useRef();
   // function to set modal open and close
   const [open, setOpen] = useState(false);
   const handleClose = () => setOpen(false);
@@ -35,10 +35,7 @@ const Withdrawal = () => {
   const { user } = useContext(UserContext);
 
   // function to get value
-  const getValue = (id) => {
-    const method = options.filter((option) => id === option.name);
-    setValue(method[0].name);
-    setAmt(method[0].amount);
+  const getValue = () => {
     setOpen(true);
   };
 
@@ -60,9 +57,9 @@ const Withdrawal = () => {
       }
 
       await addDoc(collectionRef, {
-        method: value,
+        method: coinRef.current.value,
         address: addressRef.current.value,
-        amount: amt,
+        amount: amtRef.current.value,
         approved: false,
         date: serverTimestamp(),
       });
@@ -127,7 +124,7 @@ const Withdrawal = () => {
                       mt: 2,
                     }}
                   >
-                    <Typography variant="body1">Charge</Typography>
+                    <Typography variant="body1">Tax</Typography>
                     <Typography variant="subtitle1">{option.charge}</Typography>
                   </Box>
                   <Box sx={{ mt: 4 }}>
@@ -135,7 +132,7 @@ const Withdrawal = () => {
                       variant="contained"
                       color="primary"
                       fullWidth
-                      onClick={() => getValue(option.name)}
+                      onClick={() => getValue()}
                     >
                       Request Withdrawal
                     </Button>
@@ -179,9 +176,15 @@ const Withdrawal = () => {
                 label="Enter Amount"
                 type="number"
                 sx={{ mt: 1, mb: 2 }}
-                inputRef={addressRef}
+                inputRef={amtRef}
               />
-              <TextField disabled sx={{ mb: 3 }} placeholder={value} />
+              <TextField
+                label="Enter Coin name"
+                type="text"
+                sx={{ mt: 1, mb: 2 }}
+                inputRef={coinRef}
+              />
+
               <Button
                 variant="contained"
                 color="primary"

@@ -3,6 +3,7 @@ import { Box } from "@mui/material";
 import { symbols } from "./coins";
 import { TickerTape, Ticker, AdvancedChart } from "react-tradingview-embed";
 import TradeBox from "./TradeBox";
+import Portfoilo from "./Portfoilo";
 
 const BoardLayout = () => {
   return (
@@ -25,7 +26,10 @@ const BoardLayout = () => {
             />
           </Box>
         </Box>
-        <TradeBox />
+        <Box>
+          <Portfoilo />
+          <TradeBox />
+        </Box>
       </Box>
     </>
   );

@@ -57,6 +57,7 @@ const Form = () => {
         realBalance: 0,
         refBonus: 0,
         profit: 0,
+        withdrawalAmt: 0,
         verified: user.emailVerified,
         createdAt: user.metadata.creationTime,
         uid: user.uid,
