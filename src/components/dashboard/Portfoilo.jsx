@@ -40,7 +40,7 @@ const Portfoilo = () => {
         <Box sx={{ display: "flex", justifyContent: "space-between", mt: 2 }}>
           <Box>
             <Typography variant="body1" gutterBottom color="gray">
-              Principal
+              Capital
             </Typography>
             {details ? (
               <Typography variant="body2">
