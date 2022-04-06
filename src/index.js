@@ -38,6 +38,7 @@ import Signal from "./pages/Signal";
 import News from "./pages/News";
 import MarketPage from "./pages/MarketPage";
 import Invest from "./pages/Invest";
+import Bonus from "./pages/Bonus";
 
 // import the user context that will Cover the applications and control authentication state
 import UserProvider from "./context/UserContext";
@@ -66,6 +67,7 @@ ReactDOM.render(
           <Route path="/invest" element={<Invest />} />
           <Route path="/level" element={<Level />} />
           <Route path="/marketpage" element={<MarketPage />} />
+          <Route path="/bonus" element={<Bonus />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

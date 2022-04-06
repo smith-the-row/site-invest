@@ -31,8 +31,6 @@ const Portfoilo = () => {
     fetchUserDetails();
   }, [user.email]);
 
-  console.log(details);
-
   return (
     <Box sx={{ mb: 2 }}>
       <Paper sx={{ p: 1 }}>
@@ -109,6 +107,15 @@ const Portfoilo = () => {
           onClick={() => navigate("/deposit")}
         >
           Fund Account
+        </Button>
+        <Button
+          variant="outlined"
+          fullWidth
+          color="success"
+          sx={{ mt: 2 }}
+          onClick={() => navigate("/bonus")}
+        >
+          Withdraw Bonus
         </Button>
       </Paper>
     </Box>

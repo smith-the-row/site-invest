@@ -52,8 +52,6 @@ const InvestmentTable = () => {
     fetchInvestment();
   }, [user.email]);
 
-  console.log(investments);
-
   return (
     <TableContainer component={Paper} sx={{ mt: 6 }}>
       {investments.length > 0 ? (
@@ -62,7 +60,8 @@ const InvestmentTable = () => {
             <TableRow>
               <TableCell>Amount</TableCell>
               <TableCell>Plan</TableCell>
-              <TableCell>ROI (Monthly)</TableCell>
+              <TableCell>ROI</TableCell>
+              <TableCell>Duration</TableCell>
               <TableCell>Date</TableCell>
             </TableRow>
           </TableHead>
@@ -77,6 +76,7 @@ const InvestmentTable = () => {
                 </TableCell>
                 <TableCell>{investment.plan}</TableCell>
                 <TableCell>{investment.returns}</TableCell>
+                <TableCell>{investment.duration}</TableCell>
                 <TableCell>
                   {moment(investment.date.at).format("YYYY/MM/DD")}
                 </TableCell>

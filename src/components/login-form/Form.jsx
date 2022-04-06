@@ -58,6 +58,10 @@ const Form = () => {
           theme: "colored",
         });
       }
+      toast.error("Please Check your internet connection", {
+        position: "bottom-center",
+        theme: "colored",
+      });
     }
   };
 

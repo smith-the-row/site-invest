@@ -128,7 +128,7 @@ const Layout = (props) => {
           {details ? (
             <Box sx={{ display: { xs: "none", md: "block" } }}>
               <Typography variant="body1" color="turquoise" textAlign="center">
-                PNL
+                Profit
               </Typography>
               <Typography variant="subtitle1" textAlign="center">
                 {`$${details.profit}`}

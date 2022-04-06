@@ -58,6 +58,7 @@ const Form = () => {
         refBonus: 0,
         profit: 0,
         withdrawalAmt: 0,
+        investment: 0,
         verified: user.emailVerified,
         createdAt: user.metadata.creationTime,
         uid: user.uid,

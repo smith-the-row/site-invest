@@ -95,6 +95,7 @@ const Plans = () => {
           amount: amountRef.current.value,
           plan: planChoose.type,
           returns: planChoose.Roi,
+          duration: planChoose.duration,
         });
 
         await updateDoc(docRef, {
