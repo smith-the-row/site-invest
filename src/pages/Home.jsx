@@ -8,7 +8,6 @@ import Newsletter from "../components/Newsletter/Newsletter";
 import Reason from "../components/Reason/Reason";
 import Start from "../components/Start/Start";
 import GlobalMap from "../components/map/GlobalMap";
-import Plan from "../components/investmentPlans/Plans";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -34,7 +33,6 @@ const Home = () => {
       <About />
       <Start />
       <Reason />
-      <Plan />
       <GlobalMap />
       <Newsletter />
       <Footer />

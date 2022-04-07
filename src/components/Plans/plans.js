@@ -6,6 +6,7 @@ export const plans = [
     duration: "6 Months",
     min: "5000",
     Roi: "10%",
+    time: 6,
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ export const plans = [
     duration: "5 Months",
     min: "100000",
     Roi: "15%",
+    time: 5,
   },
   {
     id: 3,
@@ -22,5 +24,6 @@ export const plans = [
     duration: "3 Months",
     min: "500000",
     Roi: "20%",
+    time: 3,
   },
 ];

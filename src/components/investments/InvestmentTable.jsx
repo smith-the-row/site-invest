@@ -63,12 +63,13 @@ const InvestmentTable = () => {
               <TableCell>ROI</TableCell>
               <TableCell>Duration</TableCell>
               <TableCell>Date</TableCell>
+              <TableCell>Payout Date</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {investments.map((investment) => (
+            {investments.map((investment, index) => (
               <TableRow
-                key={investment.date}
+                key={index}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
                 <TableCell component="th" scope="row">
@@ -80,6 +81,7 @@ const InvestmentTable = () => {
                 <TableCell>
                   {moment(investment.date.at).format("YYYY/MM/DD")}
                 </TableCell>
+                <TableCell>{investment.payDate}</TableCell>
               </TableRow>
             ))}
           </TableBody>

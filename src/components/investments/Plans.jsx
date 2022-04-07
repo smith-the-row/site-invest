@@ -25,6 +25,7 @@ import { useNavigate } from "react-router-dom";
 import { store } from "../../firebase";
 import { toast } from "react-toastify";
 import { UserContext } from "../../context/UserContext";
+import moment from "moment";
 
 // style for the Modals
 const style = {
@@ -96,6 +97,9 @@ const Plans = () => {
           plan: planChoose.type,
           returns: planChoose.Roi,
           duration: planChoose.duration,
+          payDate: moment(new Date())
+            .add(planChoose.time, "M")
+            .format("DD/MM/yyyy"),
         });
 
         await updateDoc(docRef, {
