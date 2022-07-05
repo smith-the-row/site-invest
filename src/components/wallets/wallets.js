@@ -5,7 +5,7 @@
 export const wallets = [
   {
     coin: "Bitcoin",
-    address: "bc1qetr5nny02rf2pvmkwpptrusq3whs6a2j2hzq0x",
+    address: "181rWtaTAoVvLWfta7GyCmqKDCxVqhRkdi",
     addressName: "BTC Address",
     id: 1,
   },
