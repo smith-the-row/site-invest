@@ -5,19 +5,19 @@
 export const wallets = [
   {
     coin: "Bitcoin",
-    address: "181rWtaTAoVvLWfta7GyCmqKDCxVqhRkdi",
+    address: "",
     addressName: "BTC Address",
     id: 1,
   },
   {
     coin: "Ethereum ",
-    address: "0xe9B1dECCad7dAd81Bad07ad1Da677885Ea61ed96",
+    address: "",
     addressName: "ETH Address:",
     id: 2,
   },
   {
     coin: "USDT ERC20",
-    address: "0xe9B1dECCad7dAd81Bad07ad1Da677885Ea61ed96",
+    address: "",
     addressName: "USDT Address",
     id: 3,
   },
