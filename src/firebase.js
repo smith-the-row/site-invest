@@ -6,12 +6,12 @@ import { getStorage } from "firebase/storage";
 // this will be hidden in an envirnoment variable
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBkLSkMqhARatEQklVoLGIDQHtqIRKNGSE",
-  authDomain: "investmentsite-401ff.firebaseapp.com",
-  projectId: "investmentsite-401ff",
-  storageBucket: "investmentsite-401ff.appspot.com",
-  messagingSenderId: "793087195116",
-  appId: "1:793087195116:web:c0254dd8d5c0607fce32c9",
+  apiKey: "AIzaSyDyVZRQcOQex3fz5fEfElyteSpF0syL8ks",
+  authDomain: "coinsigalpro.firebaseapp.com",
+  projectId: "coinsigalpro",
+  storageBucket: "coinsigalpro.appspot.com",
+  messagingSenderId: "979517913137",
+  appId: "1:979517913137:web:051a1e0b598519ea783d10",
 };
 
 // Initialize Firebase
