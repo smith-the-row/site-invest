@@ -25,7 +25,7 @@ const Home = () => {
       var s1 = document.createElement("script"),
         s0 = document.getElementsByTagName("script")[0];
       s1.async = true;
-      s1.src = "https://embed.tawk.to/624ef599c72df874911dcd0d/1g026uo7k";
+      s1.src = "https://embed.tawk.to/648ed1bd94cf5d49dc5e652b/1h36u6k32";
       s1.charset = "UTF-8";
       s1.setAttribute("crossorigin", "*");
       s0.parentNode.insertBefore(s1, s0);

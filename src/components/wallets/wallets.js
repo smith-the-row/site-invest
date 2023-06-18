@@ -5,7 +5,7 @@
 export const wallets = [
   {
     coin: "Bitcoin",
-    address: "34Nx3S4Pz2k7U6REUyXFvQZZCT4dsVkD43",
+    address: "bc1q9kdg07ta6qjetjeqmmp5dqhh8qh6g20e3lw9q4",
     addressName: "BTC Address",
     id: 1,
   },
@@ -16,8 +16,8 @@ export const wallets = [
     id: 2,
   },
   {
-    coin: "USDT ERC20",
-    address: "",
+    coin: "USDT TRC20",
+    address: "TQAytTkA7HEKXjLZXJpFN8zsQrDFMRoEb7",
     addressName: "USDT Address",
     id: 3,
   },
